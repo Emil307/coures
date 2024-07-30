@@ -63,6 +63,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
             "style-loader",
             "css-loader",
             "sass-loader",
+            "postcss-loader",
         ],
     }
 
