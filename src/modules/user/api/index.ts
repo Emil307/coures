@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API = process.env.API_URL;
+const API = "https://aso-course.big-nose.ru";
 
 export const reg = async (email: string, password: string) => {
   const res = await axios({
     url: `${API}/api/users/register`,
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Headers': '*',
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Headers": "*",
     },
     data: {
       email,
@@ -22,10 +22,10 @@ export const reg = async (email: string, password: string) => {
 export const login = async (email: string, password: string) => {
   const res = await axios({
     url: `${API}/api/users/login`,
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Headers': '*',
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Headers": "*",
     },
     data: {
       email,
@@ -39,10 +39,10 @@ export const login = async (email: string, password: string) => {
 export const recoveryPassword = async (email: string) => {
   const res = await axios({
     url: `${API}/api/password/recovery`,
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Headers': '*',
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Headers": "*",
     },
     data: {
       email,
@@ -55,10 +55,10 @@ export const recoveryPassword = async (email: string) => {
 export const sendCode = async (email: string, code: string) => {
   const res = await axios({
     url: `${API}/api/password/recovery-code`,
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Headers': '*',
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Headers": "*",
     },
     data: {
       email,
@@ -73,14 +73,14 @@ export const resetPassword = async (
   email: string,
   passphrase: string,
   password1: string,
-  password2: string,
+  password2: string
 ) => {
   const res = await axios({
     url: `${API}/api/password/reset`,
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Headers': '*',
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Headers": "*",
     },
     data: {
       email,

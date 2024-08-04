@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API = process.env.API_URL;
+const API = "https://aso-course.big-nose.ru";
 
 export const getCourses = async () => {
   const res = await axios({
     url: `${API}/api/courses`,
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Headers': '*',
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Headers": "*",
     },
   });
 
