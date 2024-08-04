@@ -36,9 +36,9 @@ export const Lesson: React.FC = () => {
       <LessonHeader />
       {isLoading && <>Loading...</>}
       {lesson && (
-        <div className="pt-12 flex justify-center w-4/5 m-auto">
+        <div className="w-fit max-w-4xl flex flex-col gap-4 pt-4 justify-center m-auto">
           <iframe
-            width="800"
+            width="784"
             height="480"
             src="https://player.vimeo.com/video/994701694?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
             frameBorder="0"
@@ -46,7 +46,10 @@ export const Lesson: React.FC = () => {
             title="aso"
             allowFullScreen
           ></iframe>
-          <h2>{lesson.title}</h2>
+          <div>
+            <h2 className="text-4xl text-left">{lesson.title}</h2>
+            <p>{lesson.description}</p>
+          </div>
         </div>
       )}
     </>
