@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
-import { resetPassword, useUserStore } from '@/modules/user';
+import React, { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import { resetPassword, useUserStore } from "@/modules/user";
+import { Input, Button } from "@chakra-ui/react";
 
 interface IFormFileds {
   password1: string;
@@ -27,11 +28,11 @@ export const ResetPassword: React.FC = () => {
 
     resetPassword(email, passphrase, data.password1, data.password2)
       .then(() => {
-        toast.success('Пароль успешно изменен!');
-        navigate('/');
+        toast.success("Пароль успешно изменен!");
+        navigate("/");
       })
       .catch((e) => {
-        toast.error(e.response.data.detail?.msg || 'Произошла ошибка');
+        toast.error(e.response.data.detail?.msg || "Произошла ошибка");
       })
       .finally(() => {
         setIsloading(false);
@@ -40,55 +41,52 @@ export const ResetPassword: React.FC = () => {
 
   return (
     <>
-      <h5>
-        Введите новый пароль
-      </h5>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <input
+      <h5 className="text-4xl">Введите новый пароль</h5>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        <Input
           required
           id="password1"
           autoFocus
           type="text"
           placeholder="********"
-          {...register('password1', {
-            required: 'Обязательное поле',
+          {...register("password1", {
+            required: "Обязательное поле",
             minLength: {
               value: 8,
-              message: 'Минимальная длина пароля 8 символов',
+              message: "Минимальная длина пароля 8 символов",
             },
           })}
         />
         {errors.password1 && (
           <span role="alert">{errors.password1.message}</span>
         )}
-        <input
+        <Input
           required
           id="password2"
           autoFocus
           type="text"
           placeholder="********"
-          {...register('password2', {
-            required: 'Обязательное поле',
+          {...register("password2", {
+            required: "Обязательное поле",
             minLength: {
               value: 8,
-              message: 'Минимальная длина пароля 8 символов',
+              message: "Минимальная длина пароля 8 символов",
             },
           })}
         />
         {errors.password2 && (
           <span role="alert">{errors.password2.message}</span>
         )}
-        <button
-          disabled={isLoading}
+        <Button
+          isLoading={isLoading}
+          colorScheme="blue"
           type="submit"
+          size={"lg"}
+          className="w-full"
         >
           Установить пароль
-        </button>
-            <Link to="/">
-              Do have an account? Sign In
-            </Link>
+        </Button>
+        <Link to="/">Do have an account? Sign In</Link>
       </form>
     </>
   );
