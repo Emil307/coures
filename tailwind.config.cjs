@@ -1,7 +1,12 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        "2xl": "4px 4px 4px 4px rgba(0, 0, 0, 0.05)",
+        md: "2px 2px 2px 2px rgba(0, 0, 0, 0.05)",
+      },
+    },
     screens: {
       "2xl": { max: "1536px" },
 

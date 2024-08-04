@@ -1,9 +1,10 @@
-import React from 'react';
-import { useDisclosure } from '@chakra-ui/react';
-import { ICourse } from '@/shared/api/types';
-import { Card } from '@/shared';
-import emptyImg from '@/assets/images/empty-content.jpg';
-import { DrawerWidget } from '@/widgets';
+import React from "react";
+import { useDisclosure } from "@chakra-ui/react";
+import { ICourse } from "@/shared/api/types";
+import { Card } from "@/shared";
+import emptyImg from "@/assets/images/empty-content.jpg";
+import { DrawerWidget } from "@/widgets";
+import { BlocksList } from "@/modules/block";
 
 interface ICourseCardProps {
   course: ICourse;
@@ -15,7 +16,7 @@ export const CourseCard: React.FC<ICourseCardProps> = ({ course }) => {
   return (
     <>
       <button
-        className="w-full h-full transition-transform hover:scale-105"
+        className="w-full h-full rounded-2xl transition-transform hover:scale-105 shadow-2xl"
         onClick={onOpen}
       >
         <Card>
@@ -35,7 +36,7 @@ export const CourseCard: React.FC<ICourseCardProps> = ({ course }) => {
         onClose={onClose}
         size="md"
       >
-        <p>dadasdasda</p>
+        <BlocksList courseId={course.id} />
       </DrawerWidget>
     </>
   );
