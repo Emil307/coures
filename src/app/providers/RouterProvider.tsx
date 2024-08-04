@@ -6,7 +6,8 @@ import { RecoveryPassword } from "@/pages/RecoveryPassword";
 import { ResetCode } from "@/pages/ResetCode";
 import { ResetPassword } from "@/pages/ResetPassword";
 import { Home } from "@/pages/Home";
-import { AuthLayout } from "../layouts";
+import { Lesson } from "@/pages/Lesson";
+import { AuthLayout, BaseLayout } from "../layouts";
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +36,16 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    element: <Home />,
-    path: "/home",
+    element: <BaseLayout />,
+    children: [
+      {
+        element: <Home />,
+        path: "/home",
+      },
+      {
+        element: <Lesson />,
+        path: "/lesson/:id",
+      },
+    ],
   },
 ]);

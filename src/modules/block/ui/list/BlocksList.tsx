@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { useBlockStore, getBlocks, BlockCard } from "@/modules/block";
 import { ICourse } from "@/shared";
+import { Skeleton } from "@/shared";
 
 interface IBlocksList {
   courseId: number;
@@ -35,8 +36,20 @@ export const BlocksList: React.FC<IBlocksList> = ({ courseId }) => {
 
   return (
     <div className="flex w-full flex-col gap-4">
-      {isLoading && <></>}
-      {blocks &&
+      {isLoading && (
+        <>
+          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
+        </>
+      )}
+      {!isLoading &&
+        blocks &&
         blocks.map((block: ICourse) => (
           <BlockCard block={block} key={block.id} />
         ))}

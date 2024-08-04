@@ -14,3 +14,16 @@ export const getLessons = async (blockId: number) => {
 
   return res;
 };
+
+export const getLessonById = async (lessonId: number) => {
+  const res = await axios({
+    url: `${API}/api/course/block/lesson?lesson_id=${lessonId}`,
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Headers": "*",
+    },
+  });
+
+  return res;
+};
