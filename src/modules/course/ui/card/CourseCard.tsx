@@ -34,7 +34,7 @@ export const CourseCard: React.FC<ICourseCardProps> = ({ course }) => {
         placement="right"
         isOpen={isOpen}
         onClose={onClose}
-        size="md"
+        size="xl"
       >
         <BlocksList courseId={course.id} />
       </DrawerWidget>
