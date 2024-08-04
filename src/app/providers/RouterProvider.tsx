@@ -1,11 +1,12 @@
-import { createBrowserRouter } from 'react-router-dom';
-import { SignIn } from '@/pages/SignIn';
-import { SignUp } from '@/pages/SignUp/SignUp';
-import { RecoveryPassword } from '@/pages/RecoveryPassword';
-import { ResetCode } from '@/pages/ResetCode';
-import { ResetPassword } from '@/pages/ResetPassword';
-import { Home } from '@/pages/Home';
-import { AuthLayout } from '../layouts';
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
+import { SignIn } from "@/pages/SignIn";
+import { SignUp } from "@/pages/SignUp/SignUp";
+import { RecoveryPassword } from "@/pages/RecoveryPassword";
+import { ResetCode } from "@/pages/ResetCode";
+import { ResetPassword } from "@/pages/ResetPassword";
+import { Home } from "@/pages/Home";
+import { AuthLayout } from "../layouts";
 
 export const router = createBrowserRouter([
   {
@@ -13,28 +14,28 @@ export const router = createBrowserRouter([
     children: [
       {
         element: <SignIn />,
-        path: '/',
+        path: "/",
       },
       {
         element: <SignUp />,
-        path: '/sign-up',
+        path: "/sign-up",
       },
       {
         element: <RecoveryPassword />,
-        path: '/recovery-password',
+        path: "/recovery-password",
       },
       {
         element: <ResetCode />,
-        path: '/reset-code',
+        path: "/reset-code",
       },
       {
         element: <ResetPassword />,
-        path: '/reset-password',
+        path: "/reset-password",
       },
     ],
   },
   {
     element: <Home />,
-    path: '/home',
+    path: "/home",
   },
 ]);
