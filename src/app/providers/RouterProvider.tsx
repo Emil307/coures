@@ -7,7 +7,7 @@ import { ResetCode } from "@/pages/ResetCode";
 import { ResetPassword } from "@/pages/ResetPassword";
 import { Home } from "@/pages/Home";
 import { Lesson } from "@/pages/Lesson";
-import { AuthLayout } from "../layouts";
+import { AuthLayout, BaseLayout } from "../layouts";
 
 export const router = createBrowserRouter([
   {
@@ -36,11 +36,16 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    element: <Home />,
-    path: "/home",
-  },
-  {
-    element: <Lesson />,
-    path: "/lesson/:id",
+    element: <BaseLayout />,
+    children: [
+      {
+        element: <Home />,
+        path: "/home",
+      },
+      {
+        element: <Lesson />,
+        path: "/lesson/:id",
+      },
+    ],
   },
 ]);
