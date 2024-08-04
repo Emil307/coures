@@ -38,14 +38,14 @@ export const BlocksList: React.FC<IBlocksList> = ({ courseId }) => {
     <div className="flex w-full flex-col gap-4">
       {isLoading && (
         <>
-          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
-          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
-          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
-          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
-          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
-          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
-          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
-          <Skeleton width={"w-full"} height="h-14" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-16" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-16" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-16" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-16" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-16" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-16" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-16" bg="bg-white" />
+          <Skeleton width={"w-full"} height="h-16" bg="bg-white" />
         </>
       )}
       {!isLoading &&

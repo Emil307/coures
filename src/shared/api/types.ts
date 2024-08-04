@@ -1,7 +1,9 @@
+import { StringLiteral } from "typescript";
+
 export interface ILesson {
   id: number;
   title: string;
-  description: string;
+  text: string;
   video: string;
 }
 
@@ -27,4 +29,23 @@ export interface IUser {
   name: string;
   surname: string;
   courses?: ICourse[];
+}
+
+export interface IVariant {
+  id: number;
+  value: string;
+}
+
+export interface IQuestion {
+  id: number;
+  question: string;
+  type: "single" | "multi" | "input";
+  isСustomAvailable: boolean;
+  variants: IVariant[];
+}
+
+export interface ITest {
+  id: number;
+  title: string;
+  questions: IQuestion[];
 }
