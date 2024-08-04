@@ -6,6 +6,7 @@ import { RecoveryPassword } from "@/pages/RecoveryPassword";
 import { ResetCode } from "@/pages/ResetCode";
 import { ResetPassword } from "@/pages/ResetPassword";
 import { Home } from "@/pages/Home";
+import { Lesson } from "@/pages/Lesson";
 import { AuthLayout } from "../layouts";
 
 export const router = createBrowserRouter([
@@ -37,5 +38,9 @@ export const router = createBrowserRouter([
   {
     element: <Home />,
     path: "/home",
+  },
+  {
+    element: <Lesson />,
+    path: "/lesson/:id",
   },
 ]);
