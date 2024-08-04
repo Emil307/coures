@@ -1,22 +1,22 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getCookie, setCookie } from '@/shared';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { getCookie, setCookie } from "@/shared";
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
 
   function toSignIn() {
-    if (!getCookie('access') || !getCookie('refresh')) {
-      navigate('/');
+    if (!getCookie("access") || !getCookie("refresh")) {
+      navigate("/");
     }
   }
 
   function handleLogout() {
-    setCookie('access', '', {
-      'max-age': -1,
+    setCookie("access", "", {
+      "max-age": -1,
     });
-    setCookie('refresh', '', {
-      'max-age': -1,
+    setCookie("refresh", "", {
+      "max-age": -1,
     });
     toSignIn();
   }
