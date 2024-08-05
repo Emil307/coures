@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ISkeletonProps {
   width: string;
@@ -8,6 +8,8 @@ interface ISkeletonProps {
 
 export const Skeleton: React.FC<ISkeletonProps> = ({ width, height, bg }) => {
   return (
-    <div className={`animate-pulse rounded-lg ${width} ${height} ${bg}`} />
+    <div
+      className={`animate-pulse rounded-lg ${width} ${height} ${bg} shadow-xl`}
+    />
   );
 };

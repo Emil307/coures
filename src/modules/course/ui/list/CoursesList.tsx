@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { CourseCard, useCourseStore, getCourses } from "@/modules/course";
-import { ICourse } from "@/shared";
+import { ICourse, Skeleton } from "@/shared";
 
 export const CoursesList: React.FC = () => {
   const courses = useCourseStore((state) => state.courses);
@@ -31,7 +31,20 @@ export const CoursesList: React.FC = () => {
 
   return (
     <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 w-fit mx-auto">
-      {isLoading && <></>}
+      {isLoading && (
+        <>
+          <Skeleton width="w-72" height="h-96" bg="bg-white" />
+          <Skeleton width="w-72" height="h-96" bg="bg-white" />
+          <Skeleton width="w-72" height="h-96" bg="bg-white" />
+          <Skeleton width="w-72" height="h-96" bg="bg-white" />
+          <Skeleton width="w-72" height="h-96" bg="bg-white" />
+          <Skeleton width="w-72" height="h-96" bg="bg-white" />
+          <Skeleton width="w-72" height="h-96" bg="bg-white" />
+          <Skeleton width="w-72" height="h-96" bg="bg-white" />
+          <Skeleton width="w-72" height="h-96" bg="bg-white" />
+          <Skeleton width="w-72" height="h-96" bg="bg-white" />
+        </>
+      )}
       {courses &&
         courses.map((course: ICourse) => (
           <CourseCard course={course} key={course.id} />
