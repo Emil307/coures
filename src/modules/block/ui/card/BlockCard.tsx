@@ -12,7 +12,7 @@ export const BlockCard: React.FC<IBlockCardProps> = ({ block }) => {
   return (
     <>
       <button onClick={() => setIsOpen(!isOpen)}>
-        <div className="flex items-center h-14 pl-6 pr-6 rounded-md bg-white shadow-md">
+        <div className="flex items-center h-16 pl-6 pr-6 rounded-md bg-white shadow-md">
           <h5 className="text-xl">{block.title}</h5>
         </div>
       </button>
