@@ -20,7 +20,9 @@ export const Home: React.FC = () => {
   return (
     <>
       <Header />
-      <CoursesList />
+      <div className="mt-32">
+        <CoursesList />
+      </div>
     </>
   );
 };
