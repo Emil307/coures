@@ -1,4 +1,3 @@
-import { expect } from "@wdio/globals";
 import CoursesPage from "../pages/courses.page";
 
 describe("Courses page", () => {

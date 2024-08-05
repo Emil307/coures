@@ -18,11 +18,11 @@ export const Home: React.FC = () => {
   }
 
   return (
-    <>
+    <div id="home-page">
       <Header />
       <div className="mt-32 pb-16">
         <CoursesList />
       </div>
-    </>
+    </div>
   );
 };

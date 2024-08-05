@@ -24,7 +24,9 @@ export const Header: React.FC = () => {
   return (
     <div className="fixed top-0 left-0 z-10 w-full h-24 flex justify-between items-center p-8 bg-white">
       <h1 className="text-3xl font-bold">BrainUp</h1>
-      <button onClick={handleLogout}>logout</button>
+      <button onClick={handleLogout} id="logout-button">
+        logout
+      </button>
     </div>
   );
 };

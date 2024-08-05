@@ -54,7 +54,7 @@ export const SignIn: React.FC = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         <Input
           isRequired
-          id="email"
+          id="email-login"
           {...register("email", {
             required: "Обязательное поле",
             pattern: {
@@ -68,6 +68,7 @@ export const SignIn: React.FC = () => {
         />
         {errors.email && <span role="alert">{errors.email.message}</span>}
         <Input
+          id="password-login"
           isRequired
           type="password"
           autoComplete="current-password"
@@ -83,6 +84,7 @@ export const SignIn: React.FC = () => {
           type="submit"
           size={"lg"}
           className="w-full"
+          id="login-button"
         >
           Sign In
         </Button>
