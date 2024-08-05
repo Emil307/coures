@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getTestById } from "../api";
 import { ITest } from "@/shared";
 import toast from "react-hot-toast";
+import { Question } from "./Question";
 
 export const Test: React.FC = () => {
   const [test, setTest] = useState<ITest | null>(null);
@@ -41,6 +42,9 @@ export const Test: React.FC = () => {
               Пройдите тест, чтобы перейти к следующему уроку
             </h3>
           </div>
+          {test.questions.map((question) => (
+            <Question question={question} key={question.id} />
+          ))}
         </div>
       )}
     </>
