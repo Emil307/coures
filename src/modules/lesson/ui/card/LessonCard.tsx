@@ -9,7 +9,9 @@ interface ILessonCardProps {
 export const LessonCard: React.FC<ILessonCardProps> = ({ lesson }) => {
   return (
     <Link to={`/lesson/${lesson.id}`}>
-      <div className="flex items-center h-14">{lesson.title}</div>
+      <div className="flex items-center h-12 pl-4 rounded-lg bg-white shadow-md">
+        <h5 className="text-lg">{lesson.title}</h5>
+      </div>
     </Link>
   );
 };
