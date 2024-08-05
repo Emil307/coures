@@ -28,6 +28,7 @@ class LoginPage extends Page {
       await this.emailInput.setValue(email);
       await this.passwordInput.setValue(password);
       await this.submitButton.click();
+      await this.homeScreen.waitForDisplayed({ timeout: 2000 });
     } catch (e) {
       throw new Error("Не удалось войти в аккаунт");
     }
