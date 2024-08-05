@@ -30,12 +30,12 @@ export const CoursesList: React.FC = () => {
   }
 
   return (
-    <div
-      className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 w-fit mx-auto"
-      id="courses-list"
-    >
+    <div>
       {isLoading && (
-        <div id="courses-loading">
+        <div
+          className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 w-fit mx-auto"
+          id="courses-loading"
+        >
           <Skeleton width="w-72" height="h-96" bg="bg-white" />
           <Skeleton width="w-72" height="h-96" bg="bg-white" />
           <Skeleton width="w-72" height="h-96" bg="bg-white" />
@@ -48,10 +48,15 @@ export const CoursesList: React.FC = () => {
           <Skeleton width="w-72" height="h-96" bg="bg-white" />
         </div>
       )}
-      {courses &&
-        courses.map((course: ICourse) => (
-          <CourseCard course={course} key={course.id} />
-        ))}
+      <div
+        id="courses-loading"
+        className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 w-fit mx-auto"
+      >
+        {courses &&
+          courses.map((course: ICourse) => (
+            <CourseCard course={course} key={course.id} />
+          ))}
+      </div>
     </div>
   );
 };
