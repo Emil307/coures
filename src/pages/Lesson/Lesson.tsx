@@ -37,9 +37,9 @@ export const Lesson: React.FC = () => {
       {isLoading && <>Loading...</>}
       {lesson && (
         <div className="w-fit max-w-4xl flex flex-col gap-4 pt-4 justify-center m-auto">
-          <div>
+          <div className="flex flex-col gap-4">
             <h2 className="text-4xl text-left">{lesson.title}</h2>
-            <p>{lesson.description}</p>
+            <p className="text-xl leading-8">{lesson.text}</p>
           </div>
           <iframe
             width="784"

@@ -1,7 +1,7 @@
 export interface ILesson {
   id: number;
   title: string;
-  description: string;
+  text: string;
   video: string;
 }
 
